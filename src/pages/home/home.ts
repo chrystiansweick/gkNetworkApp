@@ -6,14 +6,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: 'home.html'
 })
 export class HomePage {
- private url: any = ""; 
+ private url: any = this.sanitize.bypassSecurityTrustResourceUrl("https://www.gknetwork.net.br/central/"); 
   constructor(public navCtrl: NavController,
               private sanitize: DomSanitizer) {
 
-  }
-  urlpaste(){
-    this.url = "https://www.gknetwork.net.br/central/";
-    return this.sanitize.bypassSecurityTrustResourceUrl(this.url);
   }
 }
 
